@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.3.2, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KG group</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slick-theme.css' %}" rel="stylesheet">
+    <link
+            href="http://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext"
+            rel="stylesheet">
+    <style>
+        #home {
+            background: url({{ banner.image.url }}) fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<header id="home">
+    {% include 'header.html' with phones=phones main_phone=main_phone title=image_title %}
+</header>
+<section>
+    {% include 'search.html' %}
+</section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
+<script src="{% static 'js/icon_customImage.js' %}"></script>
+<script src="{% static 'js/html5lightbox.js' %}"></script>
+<script src="{% static 'js/slick.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script>
+    (function ($) {
+        var $body;
+        $(document).ready(function () {
+            $body = $('body');
+            $body
+                .find('.user-phone').each(function () {
+                $(this).mask("+996(888) 88-88-88", {autoclear: false});
+            });
+            $body.on('keyup', '.user-phone', function () {
+                var phone = $(this),
+                    phoneVal = phone.val(),
+                    form = $(this).parents('form');
+            });
+        });
+    })(jQuery);
+</script>
+</body>
+</html>
