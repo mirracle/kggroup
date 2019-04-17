@@ -1,3 +1,31 @@
+	$(function() {
+				
+				$("#menu1").mmenu({
+					navbars: [{
+						content: [ '<a href="#"> <img src="img/logo.png"> </a>' ]
+					}],
+					wrappers: [ 'bootstrap4' ]}, { });
+				$(".mh-head.mm-sticky").mhead({
+					scroll: {
+						hide: 200
+					}
+				});
+				$(".mh-head:not(.mm-sticky)").mhead({
+					scroll: false
+				}); 				
+
+				$('body').on( 'click',
+					'a[href^="#/"]',
+					function() {
+						alert( "Thank you for clicking, but that's a demo link." );
+						return false;
+					}
+				);
+			});   
+
+
+
+
 $('.sl').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -27,10 +55,24 @@ $('.sl_1').slick({
   ]
 });
 
+$('.sl_2').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+     responsive: [
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+
 // Map area
 
-
-
+ 	
 
 window.onscroll = function showHeader() {
     var header = document.querySelector('#menu');
@@ -54,7 +96,7 @@ $(function () {
         * dn - определяем положение блока на странице
         */
 
-        $('html, body').animate({ scrollTop: dn }, 1000);
+        $('html, body').animate({ scrollTop: dn -100 }, 1000);
 
         /*
         * 1000 скорость перехода в миллисекундах
@@ -64,7 +106,7 @@ $(function () {
 
 // Map area
 
-   $(document).on('click','#showResult',function(){
+  $(document).on('click','#showResult',function(){
         
         $('#mainIframe').contents().find('.floor_close').hide();
         // .css("display","none");
@@ -76,7 +118,7 @@ $(function () {
         
             switch(numberRoom.value){
                 case "1": $('#mainIframe').contents().find("#SvgjsPath1020").click();
-               break;
+              break;
                 case "2": $('#mainIframe').contents().find("#SvgjsPath1019").click(); break;
                 case "3": $('#mainIframe').contents().find("#SvgjsPath1018").click(); break;
                 case "4": $('#mainIframe').contents().find("#SvgjsPath1017").click(); break;

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <style>
+        #home {
+            background: url({{ banner.image.url }}) fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <header id="home">
+        {% include 'header.html' with phones=phones main_phone=main_phone title=image_title %}
+    </header>
+    <section>
+        {% include 'search.html' %}
+    </section>
+    <section id="objects">
+        {% include 'ready_objects.html' %}
+    </section>
+    <section id="objects_in_progress">
+        {% include 'objects_in_progress.html' %}
+    </section>
+    <section id="installment_plan">
+        {% include 'calculator.html' %}
+    </section>
+    <section id="video">
+        {% include 'about.html' %}
+    </section>
+    <section id="news">
+        {% include 'news.html' %}
+    </section>
+    <section id="callback">
+        {% include 'callback.html' %}
+    </section>
+{% endblock %}

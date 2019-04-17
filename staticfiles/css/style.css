@@ -35,12 +35,22 @@ p{
 
 
 /* Стиль header */
+#home{
+background: url(../img/homeban.png); 
+    background-blend-mode: multiply;
+    background-color: #00000042;
+background-size:cover; 
+height: 100vh;
+background-attachment: fixed;
+}
 
 .header_fixed{
     position: fixed;
     max-width: 100%!important;
-    padding: 0 70px!important;
+    padding: 0 55px!important;
     background: url(../img/homeban.png);  
+        background-blend-mode: multiply;
+    background-color: #00000042;
     background-size:cover; 
     height: 100vh;
     background-attachment: fixed;
@@ -69,11 +79,95 @@ p{
 }        
 #object_header{
     background: url(../img/object_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
     height: 100vh;
 }
+
+#shabdan_header{
+       background: url(../img/shabdan_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 100vh; 
+}
+
+#alimbek_header{
+       background: url(../img/alimbek_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 100vh; 
+}
+
+#seitek_header{
+       background: url(../img/seitek_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 100vh; 
+}
+
+#manas_header{
+       background: url(../img/manas_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 100vh; 
+}
+
+#djal_header{
+       background: url(../img/djal_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 100vh; 
+}
+
+#baitik_header{
+       background: url(../img/baitik_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 100vh; 
+}
+
+
+#balasagyn_header{
+       background: url(../img/balasagyn_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 100vh; 
+}
+
+#news_header{
+       background: url(../img/balasagyn_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+
 .logo img {
     padding-top: 10px;
 }
@@ -119,7 +213,7 @@ font-size: 14px;
     height: 20px;
     background: url(../img/icon_number.svg) no-repeat;
     background-size: 13px;
-    margin-right: 0px;
+    margin-right: 10px;
     margin-top: 3px;
 
 }
@@ -286,6 +380,7 @@ box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 
+
 #objects_in_progress img{
     width:100%;
     height: 220px;
@@ -414,6 +509,9 @@ text-decoration: none;
     .sl_slide{
     padding-right: 10px;
     }
+    #video p{
+        text-align:justify;
+    }
 /* Видео о компании */
 
 /* Новости компании*/
@@ -514,9 +612,7 @@ h5.map_icon:before{
     font-weight:bold;
 }
 /* Наши контакты */
-#our_objects{
-    padding-bottom:160px;  
-}
+
 /* Страница объектов */
 #desc_object p{
     color: #4F4F4F;
@@ -533,6 +629,7 @@ h5.map_icon:before{
 
 /* Футер */
 footer{
+    margin-top:160px;
     background: #333333;
     padding-top: 60px;
     padding-bottom:180px;
@@ -696,9 +793,19 @@ img[usemap] {
 
 
   /* Мобильная версия  */
+   @media (min-width: 768px){
+      .phone_new{
+       display:none;
+   }
+   }
+   @media (min-width: 1600px){
+    .header_fixed{
+           padding: 0 16%!important;
+}
+}
   @media (max-width: 1200px){
     .menu li {
-        padding-right: 10px;
+        padding-right: 7px;
     }
     .apartment_price input, .before_price input {
         width: 175px;
@@ -718,12 +825,19 @@ img[usemap] {
     .dropdown-toggle::after{
         margin-left: .255em!important;
     }
-   
   }
 .navbar-toggler-icon {
     background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")!important;
 }
+
+@media  (max-width: 1200px){
+        .icon_number{
+    margin-right: 0px!important;
+}
+}
+
 @media  (max-width: 960px){
+
     ul.filter{
         display:block!important;
     }
@@ -754,9 +868,22 @@ img[usemap] {
       .video_header{
         font-size:14px;
     }
+    .logo{
+    display:none;
+}
 }
 
-@media  (max-width: 560px){
+@media  (max-width: 768px){
+.logo{
+    display:none;
+}
+.desctop{
+    display:none!important;
+}
+    
+}
+
+@media (max-width: 590px)  {
     ul.filter{
         display:block!important;
     }
@@ -809,5 +936,63 @@ img[usemap] {
 }
   /* Мобильная версия  */
 
+.navbar-toggler-icon {
+    margin-left:20px;
+}
+.mm-navbar__title{
+    display:none!important;
+}
+.gallery_object img:hover{
+    margin-top: 10px!important;
+    transition: 1s;
+    
+}
 
-  
+#news_object a{
+    color:#333333;
+
+}
+#news_object a:hover{
+    color:#333333;
+    border-bottom:1px solid #333333;
+}
+
+#news_object p{
+    margin-top:20px;
+}
+
+.new_post , .arhiv{
+    border-bottom: 3px solid #333333;
+    margin-bottom:30px;
+}
+.arhiv li{
+    font-weight: 600;
+    margin: 0;
+    padding: 0 23px 0 0;
+    color: #090821;
+    border-bottom: 1px solid #fff;
+    background: #f2f2f2;
+}
+.arhiv a{
+    display: block;
+    padding: 14px 0 14px 18px;
+}
+.arhiv a:hover{
+    display: block;
+    padding: 14px 0 14px 18px;
+    border:0!important;
+    color:#2F80ED!important;
+}
+
+.arhiv ul{
+    padding:0;
+}
+.news_button a{
+    padding: 15px 30px;
+    background: #2F80ED;
+    border-radius: 4px;
+    color: white!important;
+}
+.news_button a:hover{
+    border:0!important;
+}
