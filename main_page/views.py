@@ -17,6 +17,7 @@ class MainPageView(TemplateView):
         context['progress_objects'] = KgObjects.objects.filter(status='progress')
         context['videos'] = MainVideo.objects.all()
         context['news'] = News.objects.all()
+        context['all_objects'] = KgObjects.objects.all()
         return context
 
 
