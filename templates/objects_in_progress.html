@@ -4,8 +4,9 @@
 <!-- Заголовок -->
 <div class="container ">
     <div class="row object_in_progress_collumn">
-        <div class="col-xl-4 col-lg-4 col-md-6">
+       
             {% for object in progress_objects %}
+            <div class="col-xl-4 col-lg-4 col-md-6">
                 <a href="{{ object.get_absolute_url }}">
                     <img src="{{ object.mini_image.url }}"> <!-- Картинка объектов -->
                     <div class="desc">
@@ -13,7 +14,8 @@
                         <p>{{ object.title }}</p> <!-- Описание объектов -->
                     </div>
                 </a>
+            </div>
             {% endfor %}
-        </div>
+        
     </div>
 </div>
