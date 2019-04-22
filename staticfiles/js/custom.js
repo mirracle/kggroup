@@ -112,7 +112,7 @@ function get_data() {
 if (!data) {
   var date = new Date();
   $.ajax({
-      url: 'http://kg-group.kg/balasagyn/assets/js/data.json',
+      url: 'http://test1.webhost.kg/balasagyn/assets/js/data.json',
       dataType: 'json',
       success: function (response) {
           data = response;
@@ -186,7 +186,7 @@ function get_data() {
 if (!data) {
   var date = new Date();
   $.ajax({
-      url: 'http://kg-group.kg/shabdan/assets/js/data.json',
+      url: 'http://test1.webhost.kg/shabdan/assets/js/data.json',
       dataType: 'json',
       success: function (response) {
           data = response;
@@ -258,7 +258,7 @@ function get_data() {
 if (!data) {
   var date = new Date();
   $.ajax({
-      url: 'http://kg-group.kg/alymbek/assets/js/data.json',
+      url: 'http://test1.webhost.kg/alymbek/assets/js/data.json',
       dataType: 'json',
       success: function (response) {
           data = response;

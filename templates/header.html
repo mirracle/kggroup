@@ -7,7 +7,7 @@
                             data-target="#menu1" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                <div class="col-xl-2 col-lg-2 col-md-2 logo collapse  navbar-collapse">
+                <div class="col-xl-2 col-lg-2 col-md-2 logo">
                     <a href="{% url 'home_page' %}"> <img src="{% static 'img/logo.png' %}"> </a>
                 </div>
                 <div class="col-xl-8 col-lg-8 col-md-8 menu collapse  navbar-collapse " id="menu1">
@@ -17,7 +17,7 @@
                         <li class="nav-item"><a href="#objects">Объекты</a></li>
                         <li class="nav-item"><a href="#news">Новости и акции</a></li>
                         <li class="nav-item"><a href="#contacts">Контакты</a></li>
-                        <li class="nav-item"><a href="#">Благотворительность</a></li>
+                        <li class="nav-item"><a href="{% url 'charity_list' %}">Благотворительность</a></li>
                         <li class="nav-item"><a href="#">KG</a></li>
                         <!-- TODO: add link -->
                     </ul>
