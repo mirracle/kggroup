@@ -5,7 +5,7 @@
     <div class="sl">
         {% for news_obj in news %}
             <div class="sl_slide_1">
-                <a href="news.html">
+                <a href="{{ news_obj.get_absolute_url }}">
                     <img src="{{ news_obj.logo.url }}">
                     <p>{{ news_obj.title }}</p>
                     <p>{{ news_obj.created_date }}</p>

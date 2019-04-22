@@ -58,6 +58,7 @@ class KgObjects(models.Model):
     info = models.TextField(verbose_name='Полное описание')
     status = models.CharField(choices=STATUS_CHOICES, max_length=40, verbose_name='Статус', default='planed')
     map = models.CharField(max_length=400, verbose_name='Ссылка на карту', blank=True, null=True)
+    frame = models.CharField(max_length=400, verbose_name='Ссылка на фрейм', blank=True, null=True)
 
     def __str__(self):
         return self.object_name
@@ -107,11 +108,30 @@ class BuildStep(models.Model):
         return self.step_name
 
 
+class NewsArchive(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Дата архива')
+
+    class Meta:
+        verbose_name_plural = 'Архивы новостей'
+        verbose_name = 'Архив новостей'
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('news_archive', kwargs={'pk': self.id})
+
+
 class News(models.Model):
     title = models.CharField(max_length=500, verbose_name='Заголовок')
     logo = models.ImageField(upload_to='news_logo', verbose_name='Изображение')
     text = models.TextField(verbose_name='Текст новости')
-    created_date = models.DateField(auto_now=True, verbose_name='Дата')
+    created_date = models.DateField(auto_now=False, verbose_name='Дата')
+    archive = models.ForeignKey(NewsArchive, related_name='news', on_delete=models.DO_NOTHING, blank=True, null=True,
+                                verbose_name='Архив')
+
+    def get_absolute_url(self):
+        return reverse('news_detail', kwargs={'pk': self.id})
 
     class Meta:
         verbose_name = 'Новости и акции'
@@ -120,3 +140,35 @@ class News(models.Model):
     def __str__(self):
         return self.title
 
+
+class CharityArchive(models.Model):
+    title = models.CharField(max_length=200, verbose_name='Дата архива')
+
+    class Meta:
+        verbose_name_plural = 'Архивы благотворительности'
+        verbose_name = 'Архив благотворительности'
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('charity_archive', kwargs={'pk': self.id})
+
+
+class Charity(models.Model):
+    title = models.CharField(max_length=500, verbose_name='Заголовок')
+    logo = models.ImageField(upload_to='charity_logo', verbose_name='Изображение')
+    text = models.TextField(verbose_name='Текст')
+    created_date = models.DateField(auto_now=False, verbose_name='Дата')
+    archive = models.ForeignKey(CharityArchive, related_name='charity', on_delete=models.DO_NOTHING, blank=True,
+                                null=True, verbose_name='Архив')
+
+    def get_absolute_url(self):
+        return reverse('charity_detail', kwargs={'pk': self.id})
+
+    class Meta:
+        verbose_name = 'Благотворительность'
+        verbose_name_plural = 'Благотворительности'
+
+    def __str__(self):
+        return self.title

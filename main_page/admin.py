@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import MainContacts, MainImageTitle, MainImage, KgObjects, MainVideo, News, ObjectTags, ObjectGallery, \
-    BuildStep
+    BuildStep, NewsArchive, Charity, CharityArchive
 
 
 class ObjectTagsInline(admin.TabularInline):
@@ -32,3 +32,6 @@ admin.site.register(MainImage)
 admin.site.register(KgObjects, ObjectAdmin)
 admin.site.register(MainVideo)
 admin.site.register(News)
+admin.site.register(NewsArchive)
+admin.site.register(Charity)
+admin.site.register(CharityArchive)
