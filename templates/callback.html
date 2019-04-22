@@ -4,14 +4,14 @@
 </div>
 <div class="container">
     <div class="row">
-        <form action="#" method="post" class="phone_form">
+        <form action="http://test1.webhost.kg/send.php" method="post" class="phone_form">
             <ul class="callback_spisok">
                 <li><input type="text" name="user_object" placeholder="Покупка квартиры"></li>
-                <li><input type="text" placeholder="Как вас зовут?"></li>
-                <li><input type="tel" required placeholder="Как вам перезвонить?" id="user_phone"
-                           class="user-phone" title="Формат: +996 (999) 99-99-99"/>
+                <li><input type="text" name="user_name" placeholder="Как вас зовут?"></li>
+                <li><input type="tel" name="user_phone" required placeholder="Как вам перезвонить?" id="user_phone"
+                        class="user-phone" title="Формат: +996 (999) 99-99-99" />
             </ul>
-            <input type="submit" value="Отправить запрос">
+            <input type="submit" name="submit" value="Отправить запрос">
         </form>
     </div>
 </div>

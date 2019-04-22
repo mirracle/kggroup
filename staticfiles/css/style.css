@@ -11,7 +11,7 @@ ul{
 section{
     margin-top: 60px;
 }
-#mainIframe{
+#mainIframe , #mainIframe1 , #mainIframe2{
     display:none;
 }
 #center1 {
@@ -30,7 +30,9 @@ a:hover{
 p{
     line-height: normal;
 }
-
+#SvgjsPath1090{
+    opacity:1!important;
+}
 /* Общие стили */
 
 
@@ -70,13 +72,17 @@ background-attachment: fixed;
     }
 }
 
-.dropdown-menu{
+
+.dropdown-menu {
     top: 20px!important;
     left: -28px!important;
     background: rgba(255, 255, 255, 0.15);
     padding: 15px 20px!important;
     font-size:14px;
-}        
+}      
+.dropdown-menu a{
+    color:white;
+}
 #object_header{
     background: url(../img/object_header.png);
         background-blend-mode: multiply;
@@ -165,8 +171,47 @@ background-attachment: fixed;
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
+      height: 100vh; 
 }
 
+#tynchtyk{
+         background: url(../img/tynchtyk_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;  
+      height: 100vh; 
+}
+#barsbek{
+         background: url(../img/barsbek_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+      height: 100vh; 
+}
+
+#razzakov_header{
+             background: url(../img/razzakov_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed; 
+      height: 100vh; 
+}
+
+#bakai_header{
+             background: url(../img/bakai_header.png);
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed; 
+      height: 100vh; 
+}
 
 .logo img {
     padding-top: 10px;
@@ -466,6 +511,19 @@ text-decoration: none;
     border-radius: 2px;
     margin-right: 10px;
 }
+
+
+.installment_price_new input{
+    width: 86%;
+    height: 40px;
+    padding-left: 15px;
+    background: #F6F6F6;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
 .installment_price input:focus{
     background: #ffffff;
 }
@@ -793,12 +851,7 @@ img[usemap] {
 
 
   /* Мобильная версия  */
-   @media (min-width: 768px){
-      .phone_new{
-       display:none;
-   }
-   }
-   @media (min-width: 1600px){
+     @media (min-width: 1600px){
     .header_fixed{
            padding: 0 16%!important;
 }
@@ -877,10 +930,12 @@ img[usemap] {
 .logo{
     display:none;
 }
-.desctop{
-    display:none!important;
+    .dropdown-menu {
+    left: 20px!important;
 }
-    
+.form_installment [type=submit]{
+        width: 100%;
+}
 }
 
 @media (max-width: 590px)  {
@@ -931,8 +986,8 @@ img[usemap] {
     }
     .video_header h5{
         font-size:14px;
-        
     }
+
 }
   /* Мобильная версия  */
 
@@ -995,4 +1050,19 @@ img[usemap] {
 }
 .news_button a:hover{
     border:0!important;
+}
+
+#ploschad{
+  margin-top: 20px;
+    border: 1px solid #e0e0e0;
+    background: #f5f7fa;
+    padding: 20px;
+}
+#ploschad p{
+    margin: 0;
+    font-weight: 600;
+}
+
+#wh-widget-send-button.wh-widget-left {
+    display: none!important;
 }
