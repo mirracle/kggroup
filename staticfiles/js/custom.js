@@ -172,7 +172,7 @@ $(document).on('click','#showResult',function(){
 $(document).ready(function(){
   setTimeout(function(){
   $('#mainIframe').contents().find('.floor_close').css("display","none");
-   console.log("test click ks");   
+   
   },500);
 });
 
@@ -245,7 +245,7 @@ $(document).on('click','#showResult',function(){
 $(document).ready(function(){
   setTimeout(function(){
   $('#mainIframe1').contents().find('.floor_close').css("display","none");
-   console.log("test click ks");   
+
   },500);
 });
 
@@ -316,8 +316,7 @@ $(document).on('click','#showResult',function(){
  
 $(document).ready(function(){
   setTimeout(function(){
-  $('#mainIframe2').contents().find('.floor_close').css("display","none");
-   console.log("test click ks");   
+  $('#mainIframe2').contents().find('.floor_close').css("display","none");     
   },500);
 });
 
