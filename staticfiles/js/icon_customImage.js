@@ -138,7 +138,7 @@ ymaps.ready(function () {
             // Необходимо указать данный тип макета.
             iconLayout: 'default#imageWithContent',
             // Своё изображение иконки метки.
-            iconImageHref: 'http://test1.webhost.kg/img/icon_object.png',
+            iconImageHref: 'http://176.123.246.245/staticfiles/img/icon_object.png',
             // Размеры метки.
             iconImageSize: [54, 60],
             // Смещение левого верхнего угла иконки относительно
