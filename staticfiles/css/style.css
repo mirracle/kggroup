@@ -1063,6 +1063,17 @@ img[usemap] {
     font-weight: 600;
 }
 
-#wh-widget-send-button.wh-widget-left {
-    display: none!important;
+.desc_new{
+    min-height: 105px;
+    display: flex;
+    flex-direction: column;
+}
+
+p.date_new{
+    margin-top:auto;
+}
+
+
+.blago h5{
+    font-weight:bold;
 }

@@ -21,16 +21,7 @@
 <body>
 {% block content %}
 {% endblock %}
-
-
-<script type='text/javascript'>
-(function(){ var widget_id = 'rDVLBFFMf0';var d=document;var w=window;function l(){
-  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
-  s.src = '//code.jivosite.com/script/widget/'+widget_id
-    ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
-  if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
-  else{w.addEventListener('load',l,false);}}})();
-</script>
+<!-- WhatsHelp.io widget -->
 <script type="text/javascript">
     (function () {
         var options = {
@@ -46,6 +37,17 @@
         var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
     })();
 </script>
+<!-- /WhatsHelp.io widget -->
+
+<script type='text/javascript'>
+(function(){ var widget_id = 'rDVLBFFMf0';var d=document;var w=window;function l(){
+  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+  s.src = '//code.jivosite.com/script/widget/'+widget_id
+    ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
+  if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
+  else{w.addEventListener('load',l,false);}}})();
+</script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="{% static 'js/jquery.mmenu.js' %}"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
@@ -88,11 +90,15 @@ function mySearch() {
         progress.style.visibility = 'hidden';
     } else {
         parent.style.visibility = 'visible';
+        ready.style.height = 'auto';
         ready.style.visibility = 'hidden';
         parent.style.height = 'auto';
         progress.style.visibility = 'visible';
     }
 }
 </script>
+
+
+
 </body>
 </html>

@@ -19,7 +19,7 @@ ymaps.ready(function () {
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: 'http://test1.webhost.kg/img/icon_object.png',
+            iconImageHref: 'http://176.123.246.245/staticfiles/img/icon_object.png',
             // Размеры метки.
             iconImageSize: [54, 60],
             // Смещение левого верхнего угла иконки относительно
@@ -29,13 +29,13 @@ ymaps.ready(function () {
 
         myPlacemarkWithContent = new ymaps.Placemark([42.827307, 74.582030], {
             hintContent: 'Ордо им. Чынгыза Айтматова',            
-            locationUrl: 'http://kg-group.kg/index.html'
+            locationUrl: 'http://176.123.246.245/object/12/'
         }, {
             // Опции.
             // Необходимо указать данный тип макета.
             iconLayout: 'default#imageWithContent',
             // Своё изображение иконки метки.
-            iconImageHref: 'http://test1.webhost.kg/img/icon_object.png',
+            iconImageHref: 'http://176.123.246.245/staticfiles/img/icon_object.png',
             // Размеры метки.
             iconImageSize: [54, 60],
             // Смещение левого верхнего угла иконки относительно
@@ -49,13 +49,13 @@ ymaps.ready(function () {
 
         myPlacemarkWithContent1 = new ymaps.Placemark([42.843422, 74.565999], {
             hintContent: 'Жилой комплекс Джал',            
-            locationUrl: 'http://kg-group.kg/djal.html'
+            locationUrl: 'http://176.123.246.245/object/8/'
         }, {
             // Опции.
             // Необходимо указать данный тип макета.
             iconLayout: 'default#imageWithContent',
             // Своё изображение иконки метки.
-            iconImageHref: 'http://test1.webhost.kg/img/icon_object.png',
+            iconImageHref: 'http://176.123.246.245/staticfiles/img/icon_object.png',
             // Размеры метки.
             iconImageSize: [54, 60],
             // Смещение левого верхнего угла иконки относительно
@@ -69,13 +69,13 @@ ymaps.ready(function () {
         
         myPlacemarkWithContent2 = new ymaps.Placemark([42.829221, 74.585178], {
             hintContent: 'Жилой комплекс Тынчтык',            
-            locationUrl: 'http://kg-group.kg/index.html'
+            locationUrl: 'http://176.123.246.245/object/13/'
         }, {
             // Опции.
             // Необходимо указать данный тип макета.
             iconLayout: 'default#imageWithContent',
             // Своё изображение иконки метки.
-            iconImageHref: 'http://test1.webhost.kg/img/icon_object.png',
+            iconImageHref: 'http://176.123.246.245/staticfiles/img/icon_object.png',
             // Размеры метки.
             iconImageSize: [54, 60],
             // Смещение левого верхнего угла иконки относительно
@@ -90,13 +90,13 @@ ymaps.ready(function () {
 
         myPlacemarkWithContent3 = new ymaps.Placemark([42.837862, 74.591942], {
             hintContent: 'Жилой комплекс Семетей',            
-            locationUrl: 'http://kg-group.kg/semtei.html'
+            locationUrl: 'http://176.123.246.245/object/3/'
         }, {
             // Опции.
             // Необходимо указать данный тип макета.
             iconLayout: 'default#imageWithContent',
             // Своё изображение иконки метки.
-            iconImageHref: 'http://test1.webhost.kg/img/icon_object.png',
+            iconImageHref: 'http://176.123.246.245/staticfiles/img/icon_object.png',
             // Размеры метки.
             iconImageSize: [54, 60],
             // Смещение левого верхнего угла иконки относительно
@@ -111,13 +111,13 @@ ymaps.ready(function () {
         
         myPlacemarkWithContent4 = new ymaps.Placemark([42.845358, 74.594538], {
             hintContent: 'Жилой комплекс Манас',            
-            locationUrl: 'http://kg-group.kg/manas.html'
+            locationUrl: 'http://176.123.246.245/object/7/'
         }, {
             // Опции.
             // Необходимо указать данный тип макета.
             iconLayout: 'default#imageWithContent',
             // Своё изображение иконки метки.
-            iconImageHref: 'http://test1.webhost.kg/img/icon_object.png',
+            iconImageHref: 'http://176.123.246.245/staticfiles/img/icon_object.png',
             // Размеры метки.
             iconImageSize: [54, 60],
             // Смещение левого верхнего угла иконки относительно
@@ -132,13 +132,13 @@ ymaps.ready(function () {
         
            myPlacemarkWithContent5 = new ymaps.Placemark([42.842589, 74.615478], {
             hintContent: 'Жилой комплекс Алымбек Датка',            
-            locationUrl: 'http://kg-group.kg/alimbek.html'
+            locationUrl: 'http://176.123.246.245/object/2/'
         }, {
             // Опции.
             // Необходимо указать данный тип макета.
             iconLayout: 'default#imageWithContent',
             // Своё изображение иконки метки.
-            iconImageHref: 'http://test1.webhost.kg/img/icon_object.png',
+            iconImageHref: 'http://176.123.246.245/staticfiles/img/icon_object.png',
             // Размеры метки.
             iconImageSize: [54, 60],
             // Смещение левого верхнего угла иконки относительно
@@ -152,13 +152,13 @@ ymaps.ready(function () {
         
                 myPlacemarkWithContent6 = new ymaps.Placemark([42.846066, 74.641251], {
             hintContent: 'Жилой комплекс Шабдан баатыр',            
-            locationUrl: 'http://kg-group.kg/shabdan.html'
+            locationUrl: 'http://176.123.246.245/object/1/'
         }, {
             // Опции.
             // Необходимо указать данный тип макета.
             iconLayout: 'default#imageWithContent',
             // Своё изображение иконки метки.
-            iconImageHref: 'http://test1.webhost.kg/img/icon_object.png',
+            iconImageHref: 'http://176.123.246.245/staticfiles/img/icon_object.png',
             // Размеры метки.
             iconImageSize: [54, 60],
             // Смещение левого верхнего угла иконки относительно
@@ -172,13 +172,13 @@ ymaps.ready(function () {
 
                     myPlacemarkWithContent7 = new ymaps.Placemark([42.855174, 74.610456], {
             hintContent: 'Головной офис',            
-            locationUrl: 'http://kg-group.kg'
+            locationUrl: 'http://176.123.246.245/'
         }, {
             // Опции.
             // Необходимо указать данный тип макета.
             iconLayout: 'default#imageWithContent',
             // Своё изображение иконки метки.
-            iconImageHref: 'http://test1.webhost.kg/img/map_logo.png',
+            iconImageHref: 'http://176.123.246.245/staticfiles/img/map_logo.png',
             // Размеры метки.
             iconImageSize: [54, 60],
             // Смещение левого верхнего угла иконки относительно
