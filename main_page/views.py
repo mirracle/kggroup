@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView, DetailView, ListView
 from .models import MainContacts, MainImageTitle, MainImage, KgObjects, MainVideo, News, ObjectTags, ObjectGallery, \
-    BuildStep, NewsArchive, CharityArchive, Charity
+    BuildStep, NewsArchive, CharityArchive, Charity, ObjectFrame
 
 
 class MainPageView(TemplateView):
@@ -27,6 +27,7 @@ class ObjectDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['frames'] = ObjectFrame.objects.filter(kg_object=self.object)
         context['phones'] = MainContacts.objects.all().exclude(main=True)
         context['main_phone'] = get_object_or_404(MainContacts, main=True)
         context['tags'] = ObjectTags.objects.filter(kg_object=self.object)

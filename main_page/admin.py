@@ -1,11 +1,17 @@
 from django.contrib import admin
 from .models import MainContacts, MainImageTitle, MainImage, KgObjects, MainVideo, News, ObjectTags, ObjectGallery, \
-    BuildStep, NewsArchive, Charity, CharityArchive
+    BuildStep, NewsArchive, Charity, CharityArchive, ObjectFrame
 
 
 class ObjectTagsInline(admin.TabularInline):
     model = ObjectTags
     fields = ['tag_name']
+    extra = 1
+
+
+class ObjectFrameInline(admin.TabularInline):
+    model = ObjectFrame
+    fields = ['frame']
     extra = 1
 
 
@@ -23,7 +29,7 @@ class BuildStepInline(admin.TabularInline):
 
 class ObjectAdmin(admin.ModelAdmin):
     list_per_page = 50
-    inlines = [ObjectTagsInline, ObjectGalleryInline, BuildStepInline]
+    inlines = [ObjectTagsInline, ObjectGalleryInline, BuildStepInline, ObjectFrameInline]
 
 
 admin.site.register(MainContacts)

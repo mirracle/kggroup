@@ -58,13 +58,29 @@ class KgObjects(models.Model):
     info = models.TextField(verbose_name='Полное описание')
     status = models.CharField(choices=STATUS_CHOICES, max_length=40, verbose_name='Статус', default='planed')
     map = models.CharField(max_length=400, verbose_name='Ссылка на карту', blank=True, null=True)
-    frame = models.CharField(max_length=400, verbose_name='Ссылка на фрейм', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Объект'
+        verbose_name_plural = 'Объекты'
 
     def __str__(self):
         return self.object_name
 
     def get_absolute_url(self):
         return reverse('object_detail', kwargs={'pk': self.id})
+
+
+class ObjectFrame(models.Model):
+    kg_object = models.ForeignKey(KgObjects, related_name='object_frame', verbose_name='Объект',
+                                  on_delete=models.DO_NOTHING)
+    frame = models.CharField(max_length=400, verbose_name='Ссылка на фрейм', blank=True, null=True)
+
+    def __str__(self):
+        return self.kg_object.object_name
+
+    class Meta:
+        verbose_name_plural = 'Фреймы'
+        verbose_name = 'Фрейм'
 
 
 class ObjectTags(models.Model):
