@@ -1063,3 +1063,12 @@ img[usemap] {
     font-weight: 600;
 }
 
+.desc_new{
+    min-height: 105px;
+    display: flex;
+    flex-direction: column;
+}
+
+p.date_new{
+    margin-top:auto;
+}
