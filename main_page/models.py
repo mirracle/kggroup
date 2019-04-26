@@ -74,6 +74,10 @@ class KgObjects(models.Model):
     def get_absolute_url(self):
         return reverse('object_detail', kwargs={'pk': self.id})
 
+    def get_absolute_kg_url(self):
+        return reverse('object_detail_kg', kwargs={'pk': self.id})
+
+
 
 class ObjectFrame(models.Model):
     kg_object = models.ForeignKey(KgObjects, related_name='object_frame', verbose_name='Объект',
@@ -143,6 +147,9 @@ class NewsArchive(models.Model):
     def get_absolute_url(self):
         return reverse('news_archive', kwargs={'pk': self.id})
 
+    def get_absolute_kg_url(self):
+        return reverse('news_archive_kg', kwargs={'pk': self.id})
+
 
 class News(models.Model):
     title = models.CharField(max_length=500, verbose_name='Заголовок')
@@ -156,6 +163,9 @@ class News(models.Model):
 
     def get_absolute_url(self):
         return reverse('news_detail', kwargs={'pk': self.id})
+
+    def get_absolute_kg_url(self):
+        return reverse('news_detail_kg', kwargs={'pk': self.id})
 
     class Meta:
         verbose_name = 'Новости и акции'
@@ -178,6 +188,9 @@ class CharityArchive(models.Model):
     def get_absolute_url(self):
         return reverse('charity_archive', kwargs={'pk': self.id})
 
+    def get_absolute_kg_url(self):
+        return reverse('charity_archive_kg', kwargs={'pk': self.id})
+
 
 class Charity(models.Model):
     title = models.CharField(max_length=500, verbose_name='Заголовок')
@@ -191,6 +204,9 @@ class Charity(models.Model):
 
     def get_absolute_url(self):
         return reverse('charity_detail', kwargs={'pk': self.id})
+
+    def get_absolute_kg_url(self):
+        return reverse('charity_detail_kg', kwargs={'pk': self.id})
 
     class Meta:
         verbose_name = 'Благотворительность'

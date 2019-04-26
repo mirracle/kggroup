@@ -1,5 +1,5 @@
 <div class="container">
-    <h4>Поиск объектов</h4>
+    <h4>Издоо </h4>
     <ul class="filter">
         <li class="apartment_price">
             <p>Квартиранын наркы баштап (сом)</p>
@@ -24,29 +24,29 @@
                 <option>Курулуп жаткан имараттар</option>
             </select>
         </li>
-        <li class="result"><input type="submit" value="Жыйынтык" onclick="mySearch()"></li>
+        <li class="result"><input type="submit" value="Жыйынтык" onclick="mySearchKg()"></li>
     </ul>
 </div>
 <div class="container" style="visibility: hidden; height:0" id="result">
-    <h4>Результат поиска</h4>
+    <h4>Издоо жыйынтыгы</h4>
      <div class="row object_collumn" style="visibility: hidden; height:0" id="progress">
-        {% for object in progress_objects %}
+        {% for object in progress_objects_kg %}
             <div class="col-xl-3 col-lg-3 col-md-6">
-                <a href="{{ object.get_absolute_url }}">
+                <a href="{{ object.get_absolute_kg_url }}">
                     <img src="{{ object.mini_image.url }}">
-                    <h6>{{ object.object_name }}</h6>
-                    <p>{{ object.title }}</p>
+                    <h6>{{ object.object_name_kg }}</h6>
+                    <p>{{ object.title_kg }}</p>
                 </a>
             </div>
         {% endfor %}
     </div>
     <div class="row object_collumn" style="visibility: hidden; height:0" id="ready">
-        {% for object in ready_objects %}
+        {% for object in ready_objects_kg %}
             <div class="col-xl-3 col-lg-3 col-md-6">
-                <a href="{{ object.get_absolute_url }}">
+                <a href="{{ object.get_absolute_kg_url }}">
                     <img src="{{ object.mini_image.url }}">
-                    <h6>{{ object.object_name }}</h6>
-                    <p>{{ object.title }}</p>
+                    <h6>{{ object.object_name_kg }}</h6>
+                    <p>{{ object.title_kg }}</p>
                 </a>
             </div>
         {% endfor %}

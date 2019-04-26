@@ -5,7 +5,7 @@
     <div class="sl">
         {% for news_obj in news %}
             <div class="sl_slide_1">
-                <a href="{{ news_obj.get_absolute_url }}">
+                <a href="{{ news_obj.get_absolute_kg_url }}">
                     <img src="{{ news_obj.logo.url }}">
                     <div class="desc_new">
                     <p>{{ news_obj.title }}</p>

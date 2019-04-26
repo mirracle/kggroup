@@ -81,8 +81,35 @@ class NewsDetail(DetailView):
         return context
 
 
+class NewsDetailKg(DetailView):
+    template_name = 'news_detail_kg.html'
+    model = News
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['phones'] = MainContacts.objects.all().exclude(main=True)
+        context['main_phone'] = get_object_or_404(MainContacts, main=True)
+        context['last_4_news'] = News.objects.all().order_by('-id')[:4]
+        context['news_archive'] = NewsArchive.objects.all()
+        return context
+
+
 class NewsList(ListView):
     template_name = 'news_list.html'
+    model = News
+    queryset = News.objects.filter(archive=None)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['phones'] = MainContacts.objects.all().exclude(main=True)
+        context['main_phone'] = get_object_or_404(MainContacts, main=True)
+        context['last_4_news'] = News.objects.all().order_by('-id')[:4]
+        context['news_archive'] = NewsArchive.objects.all()
+        return context
+
+
+class NewsListKg(ListView):
+    template_name = 'news_list_kg.html'
     model = News
     queryset = News.objects.filter(archive=None)
 
@@ -110,8 +137,36 @@ class NewsArchiveView(DetailView):
         return context
 
 
+class NewsArchiveViewKg(DetailView):
+    template_name = 'news_archive.html'
+    model = NewsArchive
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['phones'] = MainContacts.objects.all().exclude(main=True)
+        context['main_phone'] = get_object_or_404(MainContacts, main=True)
+        context['last_4_news'] = News.objects.all().order_by('-id')[:4]
+        context['news_archive'] = NewsArchive.objects.all()
+        archive = NewsArchive.objects.get(pk=self.kwargs['pk'])
+        context['news'] = News.objects.filter(archive=archive)
+        return context
+
+
 class CharityDetail(DetailView):
     template_name = 'charity_detail.html'
+    model = Charity
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['phones'] = MainContacts.objects.all().exclude(main=True)
+        context['main_phone'] = get_object_or_404(MainContacts, main=True)
+        context['last_4_charity'] = Charity.objects.all().order_by('-id')[:4]
+        context['charity_archive'] = CharityArchive.objects.all()
+        return context
+
+
+class CharityDetailKg(DetailView):
+    template_name = 'charity_detail_kg.html'
     model = Charity
 
     def get_context_data(self, **kwargs):
@@ -136,9 +191,37 @@ class CharityList(ListView):
         context['charity_archive'] = CharityArchive.objects.all()
         return context
 
+class CharityListKg(ListView):
+    template_name = 'charity_list_kg.html'
+    model = Charity
+    queryset = Charity.objects.filter(archive=None)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['phones'] = MainContacts.objects.all().exclude(main=True)
+        context['main_phone'] = get_object_or_404(MainContacts, main=True)
+        context['last_4_charity'] = Charity.objects.all().order_by('-id')[:4]
+        context['charity_archive'] = CharityArchive.objects.all()
+        return context
+
 
 class CharityArchiveView(DetailView):
     template_name = 'charity_archive.html'
+    model = CharityArchive
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['phones'] = MainContacts.objects.all().exclude(main=True)
+        context['main_phone'] = get_object_or_404(MainContacts, main=True)
+        context['last_4_charity'] = Charity.objects.all().order_by('-id')[:4]
+        context['charity_archive'] = CharityArchive.objects.all()
+        archive = CharityArchive.objects.get(pk=self.kwargs['pk'])
+        context['charity'] = Charity.objects.filter(archive=archive)
+        return context
+
+
+class CharityArchiveViewKg(DetailView):
+    template_name = 'charity_archive_kg.html'
     model = CharityArchive
 
     def get_context_data(self, **kwargs):

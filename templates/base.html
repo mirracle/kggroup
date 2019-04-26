@@ -96,6 +96,27 @@ function mySearch() {
         progress.style.visibility = 'visible';
     }
 }
+
+function mySearchKg() {
+    var parent = document.getElementById("result");
+    var ready = document.getElementById('ready');
+    var progress = document.getElementById('progress');
+    var e = document.getElementById("status_select");
+    var status = e.options[e.selectedIndex].text;
+    if (status === 'Бүткөн имараттар') {
+        parent.style.visibility = 'visible';
+        parent.style.height = 'auto';
+        ready.style.visibility = 'visible';
+        ready.style.height = 'auto';
+        progress.style.visibility = 'hidden';
+    } else {
+        parent.style.visibility = 'visible';
+        ready.style.height = 'auto';
+        ready.style.visibility = 'hidden';
+        parent.style.height = 'auto';
+        progress.style.visibility = 'visible';
+    }
+}
 </script>
 
 

@@ -14,21 +14,21 @@
 {% endblock %}
 {% block content %}
 <header id="home">
-    {% include 'header.html' with phones=phones main_phone=main_phone title=object.object_name %}
+    {% include 'header_kg.html' with phones=phones main_phone=main_phone title=object.object_name %}
 </header>
 <section id="desc_object">
     <div class="container">
-        <h4>{{ object.object_name }}</h4>
+        <h4>{{ object.object_name_kg }}</h4>
     </div>
     <div class="container ">
-        <p>{{ object.info }}</p>
+        <p>{{ object.info_kg }}</p>
         <div class="row">
             <div class="col-xl-3 object_desc">
-                <h4>Об объекте</h4>
-                <p>{{ object.title }}</p>
+                <h4>Объект жөнүндө</h4>
+                <p>{{ object.title_kg }}</p>
                 <ul>
-                    {% for tag in tags %}
-                    <li>{{ tag.tag_name }}</li>
+                    {% for tag in tags_kg %}
+                    <li>{{ tag.tag_name_kg }}</li>
                     {% endfor %}
                 </ul>
             </div>
@@ -52,9 +52,9 @@
     {% include 'flat_block.html' %}
 </section>
 <section id="callback">
-    {% include 'callback.html' %}
+    {% include 'callback_kg.html' %}
 </section>
 <footer>
-    {% include 'footer.html' %}
+    {% include 'footer_kg.html' %}
 </footer>
 {% endblock %}
