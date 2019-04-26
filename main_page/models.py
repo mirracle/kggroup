@@ -6,6 +6,7 @@ from django.urls import reverse
 class MainVideo(models.Model):
     video = models.FileField(upload_to='main_video', verbose_name='Видео')
     title = models.CharField(max_length=100, verbose_name='Название видео')
+    title_kg = models.CharField(max_length=100, verbose_name='Название видео на КГ', blank=True, null=True)
     image = models.ImageField(upload_to='video_image', verbose_name=' Изображение к видео')
 
     class Meta:
@@ -30,6 +31,7 @@ class MainContacts(models.Model):
 
 class MainImageTitle(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название')
+    title_kg = models.CharField(max_length=100, verbose_name='Название на КГ', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Название изображения в шапке'
@@ -52,10 +54,13 @@ class MainImage(models.Model):
 
 class KgObjects(models.Model):
     object_name = models.CharField(max_length=200, verbose_name='Название')
+    object_name_kg = models.CharField(max_length=200, verbose_name='Название на КГ', blank=True, null=True)
     mini_image = models.ImageField(upload_to='mini_image', verbose_name='Мини Аватарка')
     big_image = models.ImageField(upload_to='big_image', verbose_name='Фото для шапки', blank=True, null=True)
     title = models.CharField(max_length=400, verbose_name='Краткое описание')
+    title_kg = models.CharField(max_length=400, verbose_name='Краткое описание KG', blank=True, null=True)
     info = models.TextField(verbose_name='Полное описание')
+    info_kg = models.TextField(verbose_name='Полное описание KG', blank=True, null=True)
     status = models.CharField(choices=STATUS_CHOICES, max_length=40, verbose_name='Статус', default='planed')
     map = models.CharField(max_length=400, verbose_name='Ссылка на карту', blank=True, null=True)
 
@@ -87,6 +92,7 @@ class ObjectTags(models.Model):
     kg_object = models.ForeignKey(KgObjects, related_name='object_tag', verbose_name='Объект',
                                   on_delete=models.DO_NOTHING)
     tag_name = models.CharField(max_length=500, verbose_name='Название Тега')
+    tag_name_kg = models.CharField(max_length=500, verbose_name='Название Тега KG', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Тег'
@@ -140,8 +146,10 @@ class NewsArchive(models.Model):
 
 class News(models.Model):
     title = models.CharField(max_length=500, verbose_name='Заголовок')
+    title_kg = models.CharField(max_length=500, verbose_name='Заголовок Kg', blank=True, null=True)
     logo = models.ImageField(upload_to='news_logo', verbose_name='Изображение')
     text = models.TextField(verbose_name='Текст новости')
+    text_kg = models.TextField(verbose_name='Текст новости KG', blank=True, null=True)
     created_date = models.DateField(auto_now=False, verbose_name='Дата')
     archive = models.ForeignKey(NewsArchive, related_name='news', on_delete=models.DO_NOTHING, blank=True, null=True,
                                 verbose_name='Архив')
@@ -173,8 +181,10 @@ class CharityArchive(models.Model):
 
 class Charity(models.Model):
     title = models.CharField(max_length=500, verbose_name='Заголовок')
+    title_kg = models.CharField(max_length=500, verbose_name='Заголовок KG', blank=True, null=True)
     logo = models.ImageField(upload_to='charity_logo', verbose_name='Изображение')
     text = models.TextField(verbose_name='Текст')
+    text_kg = models.TextField(verbose_name='Текст Kg', blank=True, null=True)
     created_date = models.DateField(auto_now=False, verbose_name='Дата')
     archive = models.ForeignKey(CharityArchive, related_name='charity', on_delete=models.DO_NOTHING, blank=True,
                                 null=True, verbose_name='Архив')
