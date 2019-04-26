@@ -7,7 +7,7 @@
        
             {% for object in progress_objects_kg %}
             <div class="col-xl-4 col-lg-4 col-md-6">
-                <a href="{{ object.get_absolute_url }}">
+                <a href="{{ object.get_absolute_kg_url }}">
                     <img src="{{ object.mini_image.url }}"> <!-- Картинка объектов  -->
                     <div class="desc">
                         <h6>{{ object.object_name_kg }}</h6> <!-- Заголовок объектов -->
