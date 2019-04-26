@@ -5,13 +5,13 @@
 <div class="container ">
     <div class="row object_in_progress_collumn">
        
-            {% for object in progress_objects %}
+            {% for object in progress_objects_kg %}
             <div class="col-xl-4 col-lg-4 col-md-6">
                 <a href="{{ object.get_absolute_url }}">
                     <img src="{{ object.mini_image.url }}"> <!-- Картинка объектов  -->
                     <div class="desc">
-                        <h6>{{ object.object_name }}</h6> <!-- Заголовок объектов -->
-                        <p>{{ object.title }}</p> <!-- Описание объектов -->
+                        <h6>{{ object.object_name_kg }}</h6> <!-- Заголовок объектов -->
+                        <p>{{ object.title_kg }}</p> <!-- Описание объектов -->
                     </div>
                 </a>
             </div>

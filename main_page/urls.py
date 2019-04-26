@@ -1,12 +1,14 @@
 from django.urls import path
-from .views import MainPageView, ObjectDetail, NewsDetail, NewsList, NewsArchiveView, CharityDetail, CharityList, \
+from .views import MainPageView, MainPageViewKg, ObjectDetail,ObjectDetailKg, NewsDetail, NewsList, NewsArchiveView, CharityDetail, CharityList, \
     CharityArchiveView
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('', MainPageView.as_view(), name='home_page'),
+    path('kg/', MainPageViewKg.as_view(), name='home_page_kg'),
     path('object/<int:pk>/', ObjectDetail.as_view(), name='object_detail'),
+    path('objectkg/<int:pk>/', ObjectDetailKg.as_view(), name='object_detail_kg'),
     path('news/<int:pk>/', NewsDetail.as_view(), name='news_detail'),
     path('news/', NewsList.as_view(), name='news_list'),
     path('news/archive/<int:pk>/', NewsArchiveView.as_view(), name='news_archive'),

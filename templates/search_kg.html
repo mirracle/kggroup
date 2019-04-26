@@ -2,15 +2,15 @@
     <h4>Поиск объектов</h4>
     <ul class="filter">
         <li class="apartment_price">
-            <p>Стоимость квартиры от (сом)</p>
+            <p>Квартиранын наркы баштап (сом)</p>
             <input type="text" placeholder="1 450 000 ">
         </li>
         <li class="before_price">
-            <p>До</p>
+            <p>Чейин</p>
             <input type="text" placeholder="3 000 000">
         </li>
         <li class="number_of_rooms">
-            <p>Кол-во комнат</p>
+            <p>Бөлмөнүн саны</p>
             <select>
                 <option>3</option>
                 <option>2</option>
@@ -18,13 +18,13 @@
             </select>
         </li>
         <li class="status">
-            <p>Выберите статус</p>
+            <p>Статусту тандагыла жыйынтык</p>
             <select id="status_select">
-                <option>Готовые объекты</option>
-                <option>Строящиеся объекты</option>
+                <option>Бүткөн имараттар</option>
+                <option>Курулуп жаткан имараттар</option>
             </select>
         </li>
-        <li class="result"><input type="submit" value="Показать результаты" onclick="mySearch()"></li>
+        <li class="result"><input type="submit" value="Жыйынтык" onclick="mySearch()"></li>
     </ul>
 </div>
 <div class="container" style="visibility: hidden; height:0" id="result">

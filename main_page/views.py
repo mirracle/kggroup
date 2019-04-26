@@ -21,8 +21,40 @@ class MainPageView(TemplateView):
         return context
 
 
+class MainPageViewKg(TemplateView):
+    template_name = 'home_kg.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['phones'] = MainContacts.objects.all().exclude(main=True)
+        context['main_phone'] = get_object_or_404(MainContacts, main=True)
+        context['image_title'] = MainImageTitle.objects.all().last()
+        context['banner'] = MainImage.objects.all().last()
+        context['ready_objects_kg'] = KgObjects.objects.filter(status='ready')
+        context['progress_objects_kg'] = KgObjects.objects.filter(status='progress')
+        context['videos_kg'] = MainVideo.objects.all()
+        context['news'] = News.objects.filter(archive=None)
+        context['all_objects'] = KgObjects.objects.all()
+        return context
+
+
 class ObjectDetail(DetailView):
     template_name = 'object_detail.html'
+    model = KgObjects
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['frames'] = ObjectFrame.objects.filter(kg_object=self.object)
+        context['phones'] = MainContacts.objects.all().exclude(main=True)
+        context['main_phone'] = get_object_or_404(MainContacts, main=True)
+        context['tags'] = ObjectTags.objects.filter(kg_object=self.object)
+        context['gallery'] = ObjectGallery.objects.filter(kg_object=self.object)
+        context['step'] = BuildStep.objects.filter(kg_object=self.object)
+        return context
+
+
+class ObjectDetailKg(DetailView):
+    template_name = 'object_detail_kg.html'
     model = KgObjects
 
     def get_context_data(self, **kwargs):
