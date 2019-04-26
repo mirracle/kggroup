@@ -5,7 +5,7 @@ from .models import MainContacts, MainImageTitle, MainImage, KgObjects, MainVide
 
 class ObjectTagsInline(admin.TabularInline):
     model = ObjectTags
-    fields = ['tag_name']
+    fields = ['tag_name', 'tag_name_kg']
     extra = 1
 
 
