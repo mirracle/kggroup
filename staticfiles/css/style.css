@@ -806,8 +806,8 @@ img[usemap] {
     background-position: center;
     display: block;
     position: absolute;
-    margin-top: 5em;
-    margin-left: 17em;
+    margin-top: 6em;
+    margin-left: 18em;
     opacity:0;
     transition: 0.5s;
 }
@@ -823,8 +823,8 @@ img[usemap] {
     background-position: center;
     display: block;
     position: absolute;
-    margin-top: 5em;
-    margin-left: 17em;
+    margin-top:6em;
+    margin-left: 18em;
     opacity:1;
     transition: 0.5s;
 }
