@@ -479,9 +479,10 @@ text-decoration: none;
     font-weight:bold;
 }
 .installment_back{
-    background: url('../img/rassrochka.png') no-repeat;
-    background-position: center;
-    padding: 40px 0;
+    background: url(../img/rassrochka.png);
+    background-size: cover;
+    background-position-x: 29px;
+    padding: 20px 0;
 }
 .form_installment{
     background: white;
