@@ -79,7 +79,7 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: -50px;
 }
 [dir='rtl'] .slick-prev
 {
@@ -88,7 +88,12 @@
 }
 .slick-prev:before
 {
-    content: '←';
+    content: '';
+    background: url(../img/prev.png);
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
 }
 [dir='rtl'] .slick-prev:before
 {
@@ -106,7 +111,12 @@
 }
 .slick-next:before
 {
-    content: '→';
+    content: '';
+    background: url(../img/next.png);
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
 }
 [dir='rtl'] .slick-next:before
 {
