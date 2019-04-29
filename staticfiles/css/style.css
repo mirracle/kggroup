@@ -1070,4 +1070,5 @@ p.date_new{
 
 #wh-widget-send-button.wh-widget-left {
     left: 70px!important;
+    background: transparent!important;
 }
