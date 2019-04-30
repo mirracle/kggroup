@@ -22,11 +22,12 @@
                    
                  <img src="{{ object.logo.url }}" width="100%">
                    {{ object.text|linebreaks }}
+                   {% for item in content %}
+                   <img src="{{ item.image.url }}" width="100%">
+                   {{ item.text|linebreaks }}
+               {% endfor %}
                 </div>
-                {% for item in content %}
-                <img src="{{ item.image.url }}" width="100%">
-                {{ item.text|linebreaks }}
-            {% endfor %}
+             
                 <div class="col-xl-3">
                     <div class="new_post">
                         <h5><b>Свежие записи</b></h5>
