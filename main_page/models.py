@@ -175,11 +175,11 @@ class News(models.Model):
 
 
 class NewsContent(models.Model):
-    news = models.ForeignKey(News, related_name='steps', verbose_name='Объект', on_delete=models.CASCADE,
+    news = models.ForeignKey(News, related_name='content', verbose_name='Контент', on_delete=models.CASCADE,
                              blank=True, null=True)
     image = models.ImageField(upload_to='news_image', verbose_name='Изображение')
-    text = models.TextField(verbose_name='Текст параграфа')
-    text_kg = models.TextField(verbose_name='Текст параграфа KG')
+    text = models.TextField(verbose_name='Текст параграфа', blank=True, null=True)
+    text_kg = models.TextField(verbose_name='Текст параграфа KG', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Контент новостей'
@@ -230,5 +230,16 @@ class Charity(models.Model):
         return self.title
 
 
-# class CharityContent(models.Model):
+class CharityContent(models.Model):
+    charity = models.ForeignKey(Charity, related_name='content', verbose_name='Контент', on_delete=models.CASCADE,
+                                blank=True, null=True)
+    image = models.ImageField(upload_to='charity_image', verbose_name='Изображение')
+    text = models.TextField(verbose_name='Текст параграфа', blank=True, null=True)
+    text_kg = models.TextField(verbose_name='Текст параграфа KG', blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Контент Благотворительности'
+        verbose_name_plural = 'Контенты Благотворительности'
+
+    def __str__(self):
+        return self.text

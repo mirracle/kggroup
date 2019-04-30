@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.mail import send_mail
 from django.views.generic import TemplateView, DetailView, ListView
 from .models import MainContacts, MainImageTitle, MainImage, KgObjects, MainVideo, News, ObjectTags, ObjectGallery, \
-    BuildStep, NewsArchive, CharityArchive, Charity, ObjectFrame, NewsContent
+    BuildStep, NewsArchive, CharityArchive, Charity, ObjectFrame, NewsContent, CharityContent
 
 
 class MainPageView(TemplateView):
@@ -93,6 +93,7 @@ class NewsDetailKg(DetailView):
         context['main_phone'] = get_object_or_404(MainContacts, main=True)
         context['last_4_news'] = News.objects.all().order_by('-id')[:4]
         context['news_archive'] = NewsArchive.objects.all()
+        context['content'] = NewsContent.objects.filter(news=self.object)
         return context
 
 
@@ -164,6 +165,7 @@ class CharityDetail(DetailView):
         context['main_phone'] = get_object_or_404(MainContacts, main=True)
         context['last_4_charity'] = Charity.objects.all().order_by('-id')[:4]
         context['charity_archive'] = CharityArchive.objects.all()
+        context['content'] = CharityContent.objects.filter(charity=self.object)
         return context
 
 
@@ -177,6 +179,7 @@ class CharityDetailKg(DetailView):
         context['main_phone'] = get_object_or_404(MainContacts, main=True)
         context['last_4_charity'] = Charity.objects.all().order_by('-id')[:4]
         context['charity_archive'] = CharityArchive.objects.all()
+        context['content'] = CharityContent.objects.filter(charity=self.object)
         return context
 
 
@@ -192,6 +195,7 @@ class CharityList(ListView):
         context['last_4_charity'] = Charity.objects.all().order_by('-id')[:4]
         context['charity_archive'] = CharityArchive.objects.all()
         return context
+
 
 class CharityListKg(ListView):
     template_name = 'charity_list_kg.html'
