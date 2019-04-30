@@ -78,7 +78,6 @@ class KgObjects(models.Model):
         return reverse('object_detail_kg', kwargs={'pk': self.id})
 
 
-
 class ObjectFrame(models.Model):
     kg_object = models.ForeignKey(KgObjects, related_name='object_frame', verbose_name='Объект',
                                   on_delete=models.DO_NOTHING)
@@ -155,8 +154,8 @@ class News(models.Model):
     title = models.CharField(max_length=500, verbose_name='Заголовок')
     title_kg = models.CharField(max_length=500, verbose_name='Заголовок Kg', blank=True, null=True)
     logo = models.ImageField(upload_to='news_logo', verbose_name='Изображение')
-    text = models.TextField(verbose_name='Текст новости')
-    text_kg = models.TextField(verbose_name='Текст новости KG', blank=True, null=True)
+    text = models.TextField(verbose_name='Текст новости для главной')
+    text_kg = models.TextField(verbose_name='Текст новости для главной KG', blank=True, null=True)
     created_date = models.DateField(auto_now=False, verbose_name='Дата')
     archive = models.ForeignKey(NewsArchive, related_name='news', on_delete=models.DO_NOTHING, blank=True, null=True,
                                 verbose_name='Архив')
@@ -173,6 +172,21 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class NewsContent(models.Model):
+    news = models.ForeignKey(News, related_name='content', verbose_name='Контент', on_delete=models.CASCADE,
+                             blank=True, null=True)
+    image = models.ImageField(upload_to='news_image', verbose_name='Изображение')
+    text = models.TextField(verbose_name='Текст параграфа', blank=True, null=True)
+    text_kg = models.TextField(verbose_name='Текст параграфа KG', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Контент новостей'
+        verbose_name_plural = 'Контенты новостей'
+
+    def __str__(self):
+        return self.text
 
 
 class CharityArchive(models.Model):
@@ -214,3 +228,18 @@ class Charity(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class CharityContent(models.Model):
+    charity = models.ForeignKey(Charity, related_name='content', verbose_name='Контент', on_delete=models.CASCADE,
+                                blank=True, null=True)
+    image = models.ImageField(upload_to='charity_image', verbose_name='Изображение')
+    text = models.TextField(verbose_name='Текст параграфа', blank=True, null=True)
+    text_kg = models.TextField(verbose_name='Текст параграфа KG', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Контент Благотворительности'
+        verbose_name_plural = 'Контенты Благотворительности'
+
+    def __str__(self):
+        return self.text

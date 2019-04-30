@@ -9,7 +9,7 @@
 {% endblock %}
 {% block content %}
     <header id="home">
-        {% include 'header.html' with phones=phones main_phone=main_phone %}
+        {% include 'header_s.html' with phones=phones main_phone=main_phone %}
     </header>
     <section id="news_object">
         <div class="container">
@@ -19,8 +19,12 @@
             <div class="row">
                 <div class="col-xl-9">
                     <h5>{{ object.title }}</h5>
-                    <img src="{{ object.logo.url }}" width="100%">
-                    {{ object.text|linebreaks }}
+                    {% for item in content %}
+                        <img src="{{ item.image.url }}" width="100%">
+                        {{ item.text|linebreaks }}
+                    {% endfor %}
+{#                    <img src="{{ object.logo.url }}" width="100%">#}
+{#                    {{ object.text|linebreaks }}#}
                 </div>
                 <div class="col-xl-3">
                     <div class="new_post">
