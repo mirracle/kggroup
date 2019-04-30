@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import MainContacts, MainImageTitle, MainImage, KgObjects, MainVideo, News, ObjectTags, ObjectGallery, \
-    BuildStep, NewsArchive, Charity, CharityArchive, ObjectFrame, NewsContent
+    BuildStep, NewsArchive, Charity, CharityArchive, ObjectFrame, NewsContent, CharityContent
 
 
 class ObjectTagsInline(admin.TabularInline):
@@ -33,6 +33,17 @@ class NewsContentInline(admin.TabularInline):
     fields = ['image', 'text', 'text_kg']
 
 
+class CharityContentInline(admin.TabularInline):
+    model = CharityContent
+    extra = 1
+    fields = ['image', 'text', 'text_kg']
+
+
+class ObjectCharity(admin.ModelAdmin):
+    list_per_page = 50
+    inlines = [CharityContentInline]
+
+
 class ObjectNews(admin.ModelAdmin):
     list_per_page = 50
     inlines = [NewsContentInline]
@@ -50,5 +61,5 @@ admin.site.register(KgObjects, ObjectAdmin)
 admin.site.register(MainVideo)
 admin.site.register(News, ObjectNews)
 admin.site.register(NewsArchive)
-admin.site.register(Charity)
+admin.site.register(Charity, ObjectCharity)
 admin.site.register(CharityArchive)
