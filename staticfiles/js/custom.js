@@ -4,7 +4,11 @@ $(function() {
     navbars: [{
       content: [ '<a href="#"> <img src="http://test1.webhost.kg/img/logo.png"> </a>' ]
     }],
-    wrappers: [ 'bootstrap4' ]}, { });
+    wrappers: [ 'bootstrap4' ],
+    onClick: {
+      close: true
+  }
+  }, { });
   $(".mh-head.mm-sticky").mhead({
     scroll: {
       hide: 200
@@ -15,7 +19,7 @@ $(function() {
   }); 				
 
   $('body').on( 'click',
-    'a[href^="#/"]',
+    'a[href^="#/http://127.0.0.1:8000"]',
     function() {
       alert( "Thank you for clicking, but that's a demo link." );
       return false;
