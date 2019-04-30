@@ -20,6 +20,7 @@
                 <div class="col-xl-9">
                     <h5>{{ object.title }}</h5>
                     <img src="{{ object.logo.url }}" width="100%">
+                    {{ object.text|linebreaks }}
                     {% for item in content %}
                         <img src="{{ item.image.url }}" width="100%">
                         {{ item.text|linebreaks }}
