@@ -19,7 +19,9 @@
             <div class="row">
                 <div class="col-xl-9 blago">
                     <h5>{{ object.title }}</h5>
-                   
+                    <br>
+                    <p class="date_new">{{ news_obj.created_date }}</p>
+                        <br><br>
                  <img src="{{ object.logo.url }}" width="100%">
                    {{ object.text|linebreaks }}
                    {% for item in content %}
