@@ -23,9 +23,9 @@
                         <h5>{{ object.title }}</h5>
                         <img src="{{ object.logo.url }}" width="100%">
                         {{ object.text|linebreaks|truncatewords:50 }}
-                        <br><br>
+                        <br>
                         <p class="date_new">{{ object.created_date }}</p>
-                        <br><br>
+                        <br>
                         <p class="news_button"> <a href="{{ object.get_absolute_url }}">Подробнее</a></p>
                         <br><br>
                         {% endfor %}
