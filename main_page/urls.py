@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import MainPageView, MainPageViewKg, ObjectDetail,ObjectDetailKg, NewsDetail, NewsList, NewsArchiveView, CharityDetail, CharityList, \
-    CharityArchiveView, NewsDetailKg, NewsListKg, NewsArchiveViewKg, CharityListKg, CharityArchiveViewKg, CharityDetailKg
+from .views import MainPageView, MainPageViewKg, ObjectDetail, ObjectDetailKg, NewsDetail, NewsList, NewsArchiveView, \
+    CharityDetail, CharityList, send_email, \
+    CharityArchiveView, NewsDetailKg, NewsListKg, NewsArchiveViewKg, CharityListKg, CharityArchiveViewKg, \
+    CharityDetailKg
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -21,6 +23,7 @@ urlpatterns = [
     path('charity/kg/<int:pk>/', CharityDetailKg.as_view(), name='charity_detail_kg'),
     path('charity/kg/', CharityListKg.as_view(), name='charity_list_kg'),
     path('charity/archive/kg/<int:pk>/', CharityArchiveViewKg.as_view(), name='charity_archive_kg'),
+    path('send_email/', send_email, name='send_email'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

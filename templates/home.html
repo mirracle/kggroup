@@ -28,7 +28,7 @@
 {% endblock %}
 {% block content %}
 <header id="home">
-    {% include 'header.html' with phones=phones main_phone=main_phone title=image_title %}
+    {% include 'header.html' with phones=phones main_phone=main_phone title=image_title.title %}
 </header>
 <section id="objects">
     {% include 'search.html' %}
