@@ -1,6 +1,11 @@
 from django.contrib import admin
+from django import forms
+from django.utils.html import format_html
+from ckeditor.widgets import CKEditorWidget
+from django.utils.safestring import mark_safe
+
 from .models import MainContacts, MainImageTitle, MainImage, KgObjects, MainVideo, News, ObjectTags, ObjectGallery, \
-    BuildStep, NewsArchive, Charity, CharityArchive, ObjectFrame, NewsContent, CharityContent
+    BuildStep, NewsArchive, Charity, CharityArchive, ObjectFrame, NewsContent, CharityContent, CharityVideo, NewsVideo
 
 
 class ObjectTagsInline(admin.TabularInline):
@@ -29,24 +34,69 @@ class BuildStepInline(admin.TabularInline):
 
 class NewsContentInline(admin.TabularInline):
     model = NewsContent
-    extra = 1
-    fields = ['image', 'text', 'text_kg']
+    extra = 0
+    fields = ['image', 'image_tag', 'image_url']
+    readonly_fields = ['image_tag', 'image_url']
+
+    def image_tag(self, obj):
+        return mark_safe('<img src="{url}" width="{width}" height={height} />'.format(
+            url=obj.image.url,
+            width=200,
+            height=150,
+        )
+        )
+
+    def image_url(self, obj):
+        return 'http://176.123.246.245'+obj.image.url
 
 
 class CharityContentInline(admin.TabularInline):
     model = CharityContent
-    extra = 1
-    fields = ['image', 'text', 'text_kg']
+    extra = 0
+    fields = ['image', 'image_tag', 'image_url']
+    readonly_fields = ['image_tag', 'image_url']
+
+    def image_tag(self, obj):
+        return mark_safe('<img src="{url}" width="{width}" height={height} />'.format(
+            url=obj.image.url,
+            width=200,
+            height=150,
+        )
+        )
+
+    def image_url(self, obj):
+        return 'http://176.123.246.245' + obj.image.url
+
+
+class CharityVideoInline(admin.TabularInline):
+    model = CharityVideo
+    extra = 0
+    fields = ['video']
+
+
+class NewsVideoInline(admin.TabularInline):
+    model = NewsVideo
+    extra = 0
+    fields = ['video']
+
+
+class NewsAdminForm(forms.ModelForm):
+    contents = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = News
+        fields = '__all__'
 
 
 class ObjectCharity(admin.ModelAdmin):
     list_per_page = 50
-    inlines = [CharityContentInline]
+    inlines = [CharityContentInline, CharityVideoInline]
 
 
 class ObjectNews(admin.ModelAdmin):
+    form = NewsAdminForm
     list_per_page = 50
-    inlines = [NewsContentInline]
+    inlines = [NewsContentInline, NewsVideoInline]
 
 
 class ObjectAdmin(admin.ModelAdmin):

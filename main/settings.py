@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_page',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'kggroup2020@gmail.com'
 EMAIL_HOST_PASSWORD = 'taalai0801'
 EMAIL_PORT = 587
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"

@@ -1,6 +1,9 @@
 from django.db import models
+from django.utils.safestring import mark_safe
+
 from .choices import STATUS_CHOICES
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 
 class MainVideo(models.Model):
@@ -154,8 +157,7 @@ class News(models.Model):
     title = models.CharField(max_length=500, verbose_name='Заголовок')
     title_kg = models.CharField(max_length=500, verbose_name='Заголовок Kg', blank=True, null=True)
     logo = models.ImageField(upload_to='news_logo', verbose_name='Изображение')
-    text = models.TextField(verbose_name='Текст новости для главной')
-    text_kg = models.TextField(verbose_name='Текст новости для главной KG', blank=True, null=True)
+    contents = RichTextField(blank=True, null=True, verbose_name='Контент')
     created_date = models.DateField(auto_now=False, verbose_name='Дата')
     archive = models.ForeignKey(NewsArchive, related_name='news', on_delete=models.DO_NOTHING, blank=True, null=True,
                                 verbose_name='Архив')
@@ -174,19 +176,24 @@ class News(models.Model):
         return self.title
 
 
+class NewsVideo(models.Model):
+    video = models.FileField(upload_to='news_video', verbose_name='Видео новости')
+    news = models.ForeignKey(News, related_name='video', verbose_name='Видео', on_delete=models.CASCADE,
+                             blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Видео новостей'
+        verbose_name_plural = 'Видео новостей'
+
+
 class NewsContent(models.Model):
     news = models.ForeignKey(News, related_name='content', verbose_name='Контент', on_delete=models.CASCADE,
                              blank=True, null=True)
     image = models.ImageField(upload_to='news_image', verbose_name='Изображение')
-    text = models.TextField(verbose_name='Текст параграфа', blank=True, null=True)
-    text_kg = models.TextField(verbose_name='Текст параграфа KG', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Контент новостей'
-        verbose_name_plural = 'Контенты новостей'
-
-    def __str__(self):
-        return self.text
+        verbose_name = 'Изображение новостей'
+        verbose_name_plural = 'Изображение новостей'
 
 
 class CharityArchive(models.Model):
@@ -210,8 +217,7 @@ class Charity(models.Model):
     title = models.CharField(max_length=500, verbose_name='Заголовок')
     title_kg = models.CharField(max_length=500, verbose_name='Заголовок KG', blank=True, null=True)
     logo = models.ImageField(upload_to='charity_logo', verbose_name='Изображение')
-    text = models.TextField(verbose_name='Текст')
-    text_kg = models.TextField(verbose_name='Текст Kg', blank=True, null=True)
+    contents = RichTextField(blank=True, null=True, verbose_name='Контент')
     created_date = models.DateField(auto_now=False, verbose_name='Дата')
     archive = models.ForeignKey(CharityArchive, related_name='charity', on_delete=models.DO_NOTHING, blank=True,
                                 null=True, verbose_name='Архив')
@@ -234,12 +240,18 @@ class CharityContent(models.Model):
     charity = models.ForeignKey(Charity, related_name='content', verbose_name='Контент', on_delete=models.CASCADE,
                                 blank=True, null=True)
     image = models.ImageField(upload_to='charity_image', verbose_name='Изображение')
-    text = models.TextField(verbose_name='Текст параграфа', blank=True, null=True)
-    text_kg = models.TextField(verbose_name='Текст параграфа KG', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Контент Благотворительности'
-        verbose_name_plural = 'Контенты Благотворительности'
+        verbose_name = 'Изображение Благотворительности'
+        verbose_name_plural = 'Изображение Благотворительности'
 
-    def __str__(self):
-        return self.text
+
+class CharityVideo(models.Model):
+    video = models.FileField(upload_to='news_video', verbose_name='Видео Благотворительности')
+    news = models.ForeignKey(Charity, related_name='video', verbose_name='Видео', on_delete=models.CASCADE,
+                             blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Видео новостей'
+        verbose_name_plural = 'Видео новостей'
+
