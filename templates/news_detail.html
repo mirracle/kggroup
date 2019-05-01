@@ -8,22 +8,30 @@
     </style>
 {% endblock %}
 {% block content %}
-    <header id="home">
-        {% include 'header_s.html' with phones=phones main_phone=main_phone %}
-    </header>
-    <section id="news_object">
-        <div class="container">
-            <h4>Новости и акции</h4>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 blago">
-                    <h5>{{ object.title }}</h5>
-                 <img src="{{ object.logo.url }}" width="100%">
-                   {{ object.contents|safe }}
-{#                   {% for item in content %}#}
-{#                   <img src="{{ item.image.url }}" width="100%">#}
-{#                   {% endfor %}#}
+<header id="home">
+    {% include 'header_s.html' with phones=phones main_phone=main_phone %}
+</header>
+<section id="news_object">
+    <div class="container">
+        <h4>Новости и акции</h4>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 blago">
+                <h5>{{ object.title }}</h5>
+                <p class="date_new">{{ object.created_date }}</p>
+                <img src="{{ object.logo.url }}" width="100%">
+                {{ object.contents|safe }}
+
+
+                <div class="row">
+                        {% for item in content %}
+                    <div class="col-xl-3 gallery_new">
+                        <a href="{{ item.image.url }}" class="html5lightbox" data-group="set2">
+                            <img src="{{ item.image.url }}" width="100%" height="130px">
+                        </a>
+                    </div>
+                    {% endfor %}
                 </div>
              
                 <div class="col-xl-3">

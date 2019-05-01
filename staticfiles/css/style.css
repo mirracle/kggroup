@@ -1062,6 +1062,7 @@ img[usemap] {
 
 p.date_new{
     margin-top:auto;
+    font-weight: bold;
 }
 
 
@@ -1072,4 +1073,8 @@ p.date_new{
 #wh-widget-send-button.wh-widget-left {
     left: 70px!important;
     background: transparent!important;
+}
+
+.gallery_new{
+    margin-bottom:20px;
 }
