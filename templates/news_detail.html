@@ -24,9 +24,13 @@
                 {{ object.text|linebreaks }}
 
                 {% for item in content %}
+                <div class="row">
                 <div class="col-xl-3">
-                    <a href="{{ item.image.url }}" class="html5lightbox" data-group="set2"><img src="{{ item.image.url }}" width="100%"></a>
+                    <a href="{{ item.image.url }}" class="html5lightbox" data-group="set2">
+                        <img src="{{ item.image.url }}" width="100%" height="130px">
+                    </a>
                 </div>
+            </div>
                 {% endfor %}
             </div>
 
