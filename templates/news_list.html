@@ -22,7 +22,7 @@
                             {% for object in object_list %}
                         <h5>{{ object.title }}</h5>
                         <img src="{{ object.logo.url }}" width="100%">
-                        {{ object.text|linebreaks|truncatewords:50 }}
+                        {{ object.contents|safe|linebreaks|truncatewords:50 }}
                         <br>
                         <p class="date_new">{{ object.created_date }}</p>
                         <br>
