@@ -24,6 +24,16 @@
                 {{ object.contents|safe }}
 
 
+
+                <div class="row">
+                    {% for item in video %}
+                <div class="col-xl-6 offset-xl-3 gallery_new">
+
+                        <video src="{{ item.video.url }}" controls></video>
+                                   </div>
+                {% endfor %}
+            </div>
+
                 <div class="row">
                         {% for item in content %}
                     <div class="col-xl-3 gallery_new">
@@ -33,7 +43,7 @@
                     </div>
                     {% endfor %}
                 </div>
-             
+            </div>
                 <div class="col-xl-3">
                     <div class="new_post">
                         <h5><b>Свежие записи</b></h5>
