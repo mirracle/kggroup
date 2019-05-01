@@ -80,6 +80,7 @@ class NewsDetail(DetailView):
         context['last_4_news'] = News.objects.all().order_by('-id')[:4]
         context['news_archive'] = NewsArchive.objects.all()
         context['content'] = NewsContent.objects.filter(news=self.object)
+        context['video'] = NewsVideo.objects.filter(news=self.object)
         return context
 
 
@@ -182,6 +183,7 @@ class CharityDetailKg(DetailView):
         context['last_4_charity'] = Charity.objects.all().order_by('-id')[:4]
         context['charity_archive'] = CharityArchive.objects.all()
         context['content'] = CharityContent.objects.filter(charity=self.object)
+        context['video'] = CharityVideo.objects.filter(news=self.object)
         return context
 
 
