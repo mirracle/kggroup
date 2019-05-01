@@ -24,12 +24,12 @@
                 {{ object.contents|safe }}
                     <br>
 
-
-                <div class="row">
                     {% if video %}
                     <h2>Видеоматериалы</h2>
                     {% endif %}
                     <br>
+                <div class="row">                 
+                    
                     {% for item in video %}
                 <div class="col-xl-6 offset-xl-3 gallery_new">
 
@@ -38,11 +38,11 @@
                 {% endfor %}
             </div>
 
+            {% if content %}
+            <h2>Галерея</h2>
+            {% endif %}
+
                 <div class="row">
-                        {% if content %}
-                        <h2>Галерея</h2>
-                        {% endif %}
-                        <br>
                         {% for item in content %}
                     <div class="col-xl-3 gallery_new">
                         <a href="{{ item.image.url }}" class="html5lightbox" data-group="set2">
