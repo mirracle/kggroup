@@ -22,7 +22,7 @@
                             {% for object in object_list %}
                         <h5>{{ object.title }}</h5>
                         <img src="{{ object.logo.url }}" width="100%">
-                        {{ object.contents|linebreaks|truncatewords:50 }}
+                        {{ object.contents|safe|truncatewords:50 }}
                         <br><br>
                         <p class="news_button"> <a href="{{ object.get_absolute_kg_url }}">Кененирээк</a></p>
                         <br><br>
