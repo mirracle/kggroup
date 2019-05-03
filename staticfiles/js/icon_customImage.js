@@ -130,9 +130,9 @@ ymaps.ready(function () {
         });
         
         
-           myPlacemarkWithContent5 = new ymaps.Placemark([42.842589, 74.615478], {
-            hintContent: 'Жилой комплекс Алымбек Датка',            
-            locationUrl: 'http://kg-group.kg/object/2/'
+           myPlacemarkWithContent5 = new ymaps.Placemark([42.823860, 74.613377], {
+            hintContent: 'Жилой комплекс Алымбек Датка и Курманжан Датка',            
+            locationUrl: 'http://kg-group.kg/object/5/'
         }, {
             // Опции.
             // Необходимо указать данный тип макета.

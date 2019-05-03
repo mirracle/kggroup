@@ -17,16 +17,41 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-xl-9">
-                    <h5>{{ object.title }}</h5>
-                    <p class="date_new">{{ object.created_date }}</p>  
-                    <img src="{{ object.logo.url }}" width="100%">
-                    {{ object.text|linebreaks }}
-                    {% for item in content %}
-                        <img src="{{ item.image.url }}" width="100%">
-                        {{ item.text|linebreaks }}
-                    {% endfor %}
-                </div>
+                    <div class="col-xl-9 blago">
+                            <h5>{{ object.title }}</h5>
+                            <p class="date_new">{{ object.created_date }}</p>
+                            <img src="{{ object.logo.url }}" width="100%">
+                            {{ object.contents|safe }}
+                                <br>
+            
+                                {% if video %}
+                                <h2>Видеоматериалы</h2>
+                                {% endif %}
+                                <br>
+                            <div class="row">                 
+                                
+                                {% for item in video %}
+                            <div class="col-xl-6 offset-xl-3 gallery_new">
+            
+                                    <video src="{{ item.video.url }}" controls width="100%"></video>
+                                               </div>
+                            {% endfor %}
+                        </div>
+            
+                        {% if content %}
+                        <h2>Галерея</h2>
+                        {% endif %}
+                        <br>
+                            <div class="row">
+                                    {% for item in content %}
+                                <div class="col-xl-3 gallery_new">
+                                    <a href="{{ item.image.url }}" class="html5lightbox" data-group="set2">
+                                        <img src="{{ item.image.url }}" width="100%" height="130px">
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
                 <div class="col-xl-3">
                     <div class="new_post">
                         <h5><b>Свежие записи</b></h5>

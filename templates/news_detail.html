@@ -22,8 +22,26 @@
                 <p class="date_new">{{ object.created_date }}</p>
                 <img src="{{ object.logo.url }}" width="100%">
                 {{ object.contents|safe }}
+                    <br>
 
+                    {% if video %}
+                    <h2>Видеоматериалы</h2>
+                    {% endif %}
+                    <br>
+                <div class="row">                 
+                    
+                    {% for item in video %}
+                <div class="col-xl-6 offset-xl-3 gallery_new">
 
+                        <video src="{{ item.video.url }}" controls width="100%"></video>
+                                   </div>
+                {% endfor %}
+            </div>
+
+            {% if content %}
+            <h2>Галерея</h2>
+            {% endif %}
+            <br>
                 <div class="row">
                         {% for item in content %}
                     <div class="col-xl-3 gallery_new">
@@ -33,7 +51,7 @@
                     </div>
                     {% endfor %}
                 </div>
-             
+            </div>
                 <div class="col-xl-3">
                     <div class="new_post">
                         <h5><b>Свежие записи</b></h5>
