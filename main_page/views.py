@@ -17,7 +17,7 @@ class MainPageView(TemplateView):
         context['ready_objects'] = KgObjects.objects.filter(status='ready')
         context['progress_objects'] = KgObjects.objects.filter(status='progress')
         context['videos'] = MainVideo.objects.all()
-        context['news'] = News.objects.filter(archive=None).order_by('created_date')
+        context['news'] = News.objects.filter(archive=None).order_by('-created_date')
         context['all_objects'] = KgObjects.objects.all()
         return context
 
