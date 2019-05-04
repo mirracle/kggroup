@@ -17,7 +17,7 @@ class MainPageView(TemplateView):
         context['ready_objects'] = KgObjects.objects.filter(status='ready')
         context['progress_objects'] = KgObjects.objects.filter(status='progress')
         context['videos'] = MainVideo.objects.all()
-        context['news'] = News.objects.filter(archive=None)
+        context['news'] = News.objects.filter(archive=None).order_by('-created_date')
         context['all_objects'] = KgObjects.objects.all()
         return context
 
@@ -34,7 +34,7 @@ class MainPageViewKg(TemplateView):
         context['ready_objects_kg'] = KgObjects.objects.filter(status='ready')
         context['progress_objects_kg'] = KgObjects.objects.filter(status='progress')
         context['videos_kg'] = MainVideo.objects.all()
-        context['news'] = News.objects.filter(archive=None)
+        context['news'] = News.objects.filter(archive=None).order_by('-created_date')
         context['all_objects'] = KgObjects.objects.all()
         return context
 
@@ -102,7 +102,7 @@ class NewsDetailKg(DetailView):
 class NewsList(ListView):
     template_name = 'news_list.html'
     model = News
-    queryset = News.objects.filter(archive=None)
+    queryset = News.objects.all().order_by('-created_date')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -116,7 +116,7 @@ class NewsList(ListView):
 class NewsListKg(ListView):
     template_name = 'news_list_kg.html'
     model = News
-    queryset = News.objects.filter(archive=None)
+    queryset = News.objects.all().order_by('-created_date')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
