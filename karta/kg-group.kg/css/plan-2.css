@@ -1,0 +1,73 @@
+.gramoty_grid {
+	float: left;
+	width: 220px;
+	margin-top: 20px;
+}
+.gramoty_grid img {
+	max-width: 100%;
+}
+.gramoty_grid .preset {
+	display: block;
+	float: left;
+	width: 90px;
+	margin-right: 10px;
+}
+.gramoty.visible_block img {
+	max-width: 100%;
+}
+.gramoty.visible_block {
+	
+	position: relative;
+	max-width: 600px;
+	height: 920px;
+	margin-top: 20px;
+	margin-right: 40px;
+	overflow: hidden;
+}
+.gramoty.visible_block ul li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.gramoty.visible_block .original {	
+   filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); /* IE 5.5+*/
+   opacity: 0;
+  -moz-opacity: 0; /* Mozilla 1.6 и ниже */
+  -khtml-opacity: 0; /* Konqueror 3.1, Safari 1.1 */  
+}
+.gramoty.visible_block .original-1 {
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=1); /* IE 5.5+*/
+   opacity: 1;
+  -moz-opacity: 1; /* Mozilla 1.6 и ниже */
+  -khtml-opacity: 1; /* Konqueror 3.1, Safari 1.1 */  
+}	
+#gramotyGrid.objects.gramoty_grid p {
+	float: left;
+	width: 95%;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+#gramotyGrid.objects.gramoty_grid .gramoty {
+	float: left;
+	width: 98%;
+	border-bottom: 1px solid #ccc;
+	border-top: 0px solid #ccc;
+}
+#gramotyGrid.objects.gramoty_grid .gramoty li a {
+	margin-bottom: 5px;
+}
+#gramotyGrid.objects.gramoty_grid .gramoty li a:hover,
+#gramotyGrid.objects.gramoty_grid .gramoty li a:active {
+	outline: 2px solid #eee;
+}
+.special.gramoty_grid {
+	float: left;
+	width: 100%;
+}
+.gr_item {
+	float: left;
+}
+.special.gramoty.visible_block {
+	max-width: 100%;
+}
