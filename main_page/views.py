@@ -5,6 +5,10 @@ from .models import MainContacts, MainImageTitle, MainImage, KgObjects, MainVide
     BuildStep, NewsArchive, CharityArchive, Charity, ObjectFrame, NewsContent, CharityContent, CharityVideo, NewsVideo
 
 
+class MapView(TemplateView):
+    template_name = 'map.html'
+
+
 class MainPageView(TemplateView):
     template_name = 'home.html'
 
@@ -254,3 +258,4 @@ def send_email(request):
     from_email = 'kggroup2020@gmail.com'
     send_mail(subject, message, from_email, ['info@kg-group.kg'])
     return redirect('home_page')
+
