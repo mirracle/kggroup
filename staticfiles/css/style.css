@@ -200,7 +200,7 @@ background-attachment: fixed;
 }
 
 .logo img {
-    padding-top: 10px;
+        width: 120px;
 }
 .menu ul{
     display: flex;
