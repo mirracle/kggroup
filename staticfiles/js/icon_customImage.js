@@ -13,7 +13,7 @@ ymaps.ready(function () {
 
         myPlacemark = new ymaps.Placemark(myMap.getCenter([42.855174, 74.610456]), {
             hintContent: 'Жилой комплекс Байтик',
-            locationUrl: 'http://127.0.0.1:8000/object/9/'
+            locationUrl: 'http://kg-group.kg/object/9/'
         }, {
             // Опции.
             // Необходимо указать данный тип макета.
