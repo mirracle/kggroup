@@ -224,6 +224,7 @@ background-attachment: fixed;
     padding-top: 10px;
     display: block;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background: #00000099;
 }
 .border_height_style{
     height:65px;
